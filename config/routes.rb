@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   
   resources :users
   resources :users_admin, :controller => 'users'
+  resources :accounts
 end
