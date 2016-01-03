@@ -4,12 +4,12 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
-    authorize User
+    authorize Account
   end
 
   def show
     @account = Account.find(params[:id])
-    authorize @user
+    authorize @account
   end
   
   def new
@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
 
   def update
     @account = Account.find(params[:id])
-    authorize @user
+    authorize @account
     if @account.update_attributes(acct_params)
       redirect_to accounts_path, :notice => "Account has been updated."
     else
@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
 
   def destroy
     account = Account.find(params[:id])
-    authorize user
+    authorize account
     account.destroy
     redirect_to accounts_path, :notice => "Account has been deleted."
   end
