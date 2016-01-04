@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          
   #has_many :comments, dependent: :destroy
   belongs_to :account, touch: true
+  belongs_to :company, touch: true
   
   enum role: [:user, :subscriber, :admin]
   after_initialize :set_default_role, :if => :new_record?
