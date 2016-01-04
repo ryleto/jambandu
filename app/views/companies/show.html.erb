@@ -2,3 +2,8 @@
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+
+<h3 class="text-left"><%= @company.company_name %></h3>
+<small><b>Created:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.created_at).strftime("%b %d, %Y at %l:%M %P") %></i></small><br>
+<small><b>Updated:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.updated_at).strftime("%b %d, %Y at %l:%M %P") %></i></small>
+<hr>
