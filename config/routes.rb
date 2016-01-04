@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :companies
   devise_for :users
   
   root to: 'visitors#index'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   resources :users
   resources :users_admin, :controller => 'users'
   resources :accounts
+  resources :companies
 end
