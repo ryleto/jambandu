@@ -1,4 +1,4 @@
-class AccountPolicy
+class CompanyPolicy
   attr_reader :current_user, :model
 
   def initialize(current_user, model)
@@ -15,6 +15,10 @@ class AccountPolicy
   end
 
   def new?
+    @current_user.admin?
+  end
+  
+  def edit?
     @current_user.admin?
   end
   
