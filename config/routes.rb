@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
-  resources :users_admin, :controller => 'users'
+  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout' }
+  resources :users, controllers: { registrations: 'users/registrations' }
+  #resources :users, :controller => 'users'
   
   root to: 'visitors#index'
   get   'about'     => 'static_pages#about'
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get   'contact',  to: 'messages#new', as: 'contact'
   post  'contact',  to: 'messages#create'
   get   'tags/:tag',to: 'articles#index', as: :tag
-  post 'create_user' => 'users#create', as: :create_user
+  #post 'create_user' => 'users#create', as: :create_user
   
   resources :accounts
   resources :companies

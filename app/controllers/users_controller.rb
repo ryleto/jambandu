@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  after_action :verify_authorized, unless: :devise_controller?
 
   def index
     @users = User.all
@@ -18,18 +17,22 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(secure_params)
+    @user = User.new(user_params)
     if @user.save
         redirect_to user_url, notice: "User succesfully created!" 
     else
-        render :new
+        redirect_to users_path, :alert => "Unable to add new user."
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+  
   def update
     @user = User.find(params[:id])
     authorize @user
-    if @user.update_attributes(secure_params)
+    if @user.update_attributes(user_params)
       redirect_to users_path, :notice => "User updated."
     else
       redirect_to users_path, :alert => "Unable to update user."
@@ -45,8 +48,8 @@ class UsersController < ApplicationController
 
   private
 
-  def secure_params
-    params.require(:user).permit(:role)
-  end
+    def user_params
+      params.require(:user).permit(:role, :username, :name, :email, :password, :password_confirmation, :current_password)
+    end
 
 end
