@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-        redirect_to user_url, notice: "User succesfully created!" 
+        redirect_to @user, notice: "User succesfully created!" 
     else
         redirect_to users_path, :alert => "Unable to add new user."
     end
