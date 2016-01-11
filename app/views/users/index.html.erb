@@ -2,7 +2,6 @@
   <div class="row">
     <h3>Users <small>(<%= User.count %> registered)</small></h3>
     <%= button_to "new user", new_user_path, class:"btn btn-primary", :method => :get %><br>
-    <div class="column">
       <table class="table">
         <tbody>
           <% @users.each do |user| %>
@@ -12,6 +11,5 @@
           <% end %>
         </tbody>
       </table>
-    </div>
   </div>
 </div>

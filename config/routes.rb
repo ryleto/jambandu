@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
-  #resources :users_admin, :controller => 'users'
+  devise_for :users
   scope "/admin" do
     resources :users
   end

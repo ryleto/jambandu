@@ -12,7 +12,7 @@
 <td>
   <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
   <% if current_user.email? %>
-  <%= link_to "edit", edit_user_registration_path(user), class:"btn btn-default" %>
+  <%= link_to "edit", edit_user_path(user), class:"btn btn-default" %>
   <%= link_to("delete", users_path(user), :data => { :confirm => "Are you sure you want to delete this user?" }, :method => :delete, :class => 'btn btn-default') unless user == current_user %>
   <% end %>
   </div>
