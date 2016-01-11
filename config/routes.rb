@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users_admin, :controller => 'users', :only => [:index, :new, :edit]
-  #resources :users, :controller => 'users'
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  #resources :users_admin, :controller => 'users'
+  scope "/admin" do
+    resources :users
+  end
   
   root to: 'visitors#index'
   get   'about'     => 'static_pages#about'
