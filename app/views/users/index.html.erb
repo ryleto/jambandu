@@ -3,6 +3,15 @@
     <h3>Users <small>(<%= User.count %> registered)</small></h3>
     <%= button_to "new user", new_user_path, class:"btn btn-primary", :method => :get %><br>
       <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Logins</th>
+          <th>Last Activity</th>
+          <th>Role</th>
+          <th>Action</th>
+          <th>Options</th>
+        </thead>
         <tbody>
           <% @users.each do |user| %>
             <tr>
