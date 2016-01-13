@@ -9,6 +9,7 @@ class CompaniesController < ApplicationController
   end
  
   def show
+    @users = @company.users(params[:company_id])
     authorize @company
   end
  
