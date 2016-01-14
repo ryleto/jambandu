@@ -1,33 +1,35 @@
-<%= form_for(@user) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :username %>
-    <%= f.text_field :username, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :company %>
-    <%= select_company f %>
-  </div>
-  <% if current_user.try(:admin?) %>
+<div class="authform">
+  <%= form_for(@user) do |f| %>
     <div class="form-group">
-      <%= f.label :role, "User Role" %><br>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}) %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control', :disabled => true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <% if current_user.try(:admin?) %>
+      <div class="form-group">
+        <%= f.label :company %>
+        <%= select_company f %>
+      </div>
+      <div class="form-group">
+        <%= f.label :role, "User Role" %><br>
+        <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}) %>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, input_html: { autocomplete: 'off' }, placeholder: "leave blank if unchanged", class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+     <%= f.submit 'Save', :class => 'button right' %>
   <% end %>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, input_html: {autocomplete: 'off'}, placeholder: "leave blank if unchanged", class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-  </div>
-   <%= f.submit 'Save', :class => 'button right' %>
-<% end %>
+</div>

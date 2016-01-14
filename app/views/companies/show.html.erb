@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
-  <div class="col-md-6 col-md-offset-2">
-    <br>
-    <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
-      <%= link_to "back", :back, class:"btn btn-default" %>
-      <%= link_to "edit", edit_company_path(@company), class:"btn btn-default" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <br>
+      <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
+        <%= link_to "back", :back, class:"btn btn-default" %>
+        <%= link_to "edit", edit_company_path(@company), class:"btn btn-default" %>
+      </div>
+      <h3><%= @company.company_name %></h3>
+      <small><b>Created:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.created_at).strftime("%b %d, %Y at %l:%M %P") %></i></small><br>
+      <small><b>Updated:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.updated_at).strftime("%b %d, %Y at %l:%M %P") %></i></small>
+      <hr>
+       <% if @company.users.any? %>
+        <h3>Contacts <small>(<%= @company.users.count %>)</small></h3>
+        <table class="table">
+          <thead>
+            <th>Name</th>
+            <th>Email</th>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= link_to user.name, user %></td>
+                <td><%= link_to user.email, user %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
-    <h3><%= @company.company_name %></h3>
-    <small><b>Created:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.created_at).strftime("%b %d, %Y at %l:%M %P") %></i></small><br>
-    <small><b>Updated:</b>&nbsp;&nbsp;</b><i><%= Time.at(@company.updated_at).strftime("%b %d, %Y at %l:%M %P") %></i></small>
-    <hr>
-     <% if @company.users.any? %>
-      <h3>Contacts (<%= @company.users.count %>)</h3>
-      <table class="table">
-        <thead>
-          <th>Name</th>
-          <th>Email</th>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <td><%= link_to user.name, user %></td>
-              <td><%= link_to user.email, user %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
   </div>
 </div>

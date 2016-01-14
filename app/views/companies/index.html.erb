@@ -4,10 +4,17 @@
     <h3>Companies <small>(<%= Company.count %> registered)</small></h3>
     <%= button_to "new company", new_company_path, class:"btn btn-primary", :method => :get %><br>
       <table class="table">
+        <thead>
+          <th>Company Name</th>
+          <th>User Count</th>
+          <th>Active Since</th>
+          <th>Action</th>
+        </thead>
         <tbody>
           <% @companies.each do |company| %>
             <tr>
-               <td><%= link_to company.company_name, company %></td>
+              <td><%= link_to company.company_name, company %></td>
+              <td><%= company.users.count %></td>
               <td><%= Time.at(company.created_at).strftime("%v") %></td>
               <td>
                 <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
