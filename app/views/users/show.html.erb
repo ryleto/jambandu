@@ -1,6 +1,6 @@
 <div class="container">
-    <h3>User</h3>
-    <p>Name: <%= @user.name if @user.name %></p>
-    <p>Email: <%= @user.email if @user.email %></p>
-    <p>Company: <%= @user.company.try(:company_name) || 'N/A' %></p>
+  <h3>User</h3>
+  <p>Name: <%= @user.name if @user.name %></p>
+  <p>Email: <%= @user.email if @user.email %></p>
+  <p>Company: <%= @user.company.try(:company_name) || 'N/A' %></p>
 </div>
