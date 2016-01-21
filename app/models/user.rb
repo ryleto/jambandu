@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   belongs_to :company, touch: true
   accepts_nested_attributes_for :company, :update_only => true
 
-  enum role: [:user, :subscriber, :admin]
+  enum role: [:admin, :subscriber, :user]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
