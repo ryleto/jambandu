@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma', '~> 2.15', '>= 2.15.3'
 # helpers
 gem 'active_link_to', '~> 1.0.3'
+gem 'acts_as_commentable'
 group :development, :test do
   gem 'byebug'
 end

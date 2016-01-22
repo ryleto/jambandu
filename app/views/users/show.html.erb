@@ -8,6 +8,11 @@
   <tr><td><b>Last Activity:</b></td><td><small><i><%= @user.last_sign_in_at || "N/A" %></i></small></td>
   <br></tr>
   </table><br>
+  
+  <!-- Comment Module -->
+  <%= render :partial => 'comments/comments', :locals => {:commentable_object => @user} %>
+  
+  <br><br>   
   <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
   <% if current_user.email? %>
     <%= link_to "edit", edit_user_path(@user), class:"btn btn-default" %>

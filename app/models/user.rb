@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   belongs_to :account, touch: true
   belongs_to :company, touch: true
   accepts_nested_attributes_for :company, :update_only => true
+  acts_as_commentable
 
   enum role: [:admin, :subscriber, :user]
   after_initialize :set_default_role, :if => :new_record?
