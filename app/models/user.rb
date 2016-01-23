@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :company, :update_only => true
   acts_as_commentable
 
-  enum role: [:admin, :subscriber, :user]
+  enum role: [:admin, :editor, :subscriber, :user]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role

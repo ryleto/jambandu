@@ -29,6 +29,10 @@
         </table>
       <% end %>
       
+      <% @comments.each do |comment| %>
+         <%= comment.title %> <br/>
+      <% end %>
+
       <!-- Comment Module -->
       <%= render :partial => 'comments/comments', :locals => {:commentable_object => @company} %>
     
