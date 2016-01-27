@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   #resources :comments, only: [:create, :destroy]
   #resources :comments, :path_prefix => '/:commentable_type/:commentable_id'
   resources :comments
+  resources :articles
 end
