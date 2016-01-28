@@ -1,0 +1,68 @@
+<% provide(:title, "Read Article") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <small><b>News Article</b>&nbsp;&nbsp;|&nbsp;&nbsp;</b><i><%= Time.at(@article.pubdate).strftime("%b %d, %Y") %></i></small>
+    <h1 class="text-left"><%= @article.title %></h1>
+    <hr>
+    <section>
+      <p>
+        <%= @article.body.html_safe %>
+      </p>
+    </section>
+    <!-- PANEL SECTION -->
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <div class="panel-title"><small><b>News Article</b>&nbsp;&nbsp;|&nbsp;&nbsp;</b><i><%= Time.at(@article.pubdate).strftime("%b %d, %Y") %></i></small>
+              </div>
+              <div class="panel-controls">
+                  <ul>
+                      <li><a href="" data-toggle="close" class="portlet-close"><i class="portlet-icon portlet-icon-close"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="panel-body">
+              <div class="scrollable" ui-jq="scrollbar" ui-options="{ ignoreOverlay: false }">
+                  <div class="demo-portlet-scrollable-extended">
+                      <h3><%= @article.title %></h3>
+                      <hr>
+                        <section>
+                          <p><%= @article.body.html_safe %></p>
+                        </section>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- END PANEL SECTION -->                 
+    <br>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Add Comment
+    </button>
+    
+    <div class="btn-group btn-group pull-right" role="toolbar" aria-label="...">
+      <%= link_to "Back", :back, class: "btn btn-default" %>
+      <%= link_to "Delete", @article, method: :delete, data: { confirm: "Are you sure you want to delete this article?" }, class:"btn btn-default" %>
+      <%= link_to "Edit", edit_article_path(@article), class: "btn btn-default" %>
+      <%= link_to "View Source", @article.source, class: "btn btn-default", target: "_blank" %>
+    </div>
+    
+    <!-- Modal -->
+    <section class="comment_form">
+        <%= render 'shared/comment_form' %>
+    </section>
+    
+    <% if @article.comments.any? %>
+      <h3>Comments (<%= @article.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
+    
+    </div>
+    <aside class="col-md-2">
+        <h4>Related Items</h4>
+        Article Tags:<br>
+        <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', '), class: "btn btn-default" %>
+    </aside>
+</div>
