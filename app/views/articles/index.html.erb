@@ -14,7 +14,7 @@
         <% @articles.each do |article| %>
           <tr>
             <td><%= link_to article.title, article %></td>
-            <td><small><i><%= article.pubdate || "N/A" %></i></small></td>
+            <td><small><i><%= Time.at(article.pubdate).strftime("%b %d, %Y") || 'N/A' %></i></small></td>
             <td>
               <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
               <% if current_user.email? %>
