@@ -46,23 +46,10 @@
       <%= link_to "View Source", @article.source, class: "btn btn-default", target: "_blank" %>
     </div>
     
-    <!-- Modal -->
-    <section class="comment_form">
-        <%= render 'shared/comment_form' %>
-    </section>
-    
-    <% if @article.comments.any? %>
-      <h3>Comments (<%= @article.comments.count %>)</h3>
-      <ol class="comments">
-        <%= render @comments %>
-      </ol>
-      <%= will_paginate @comments %>
-    <% end %>
-    
     </div>
     <aside class="col-md-2">
         <h4>Related Items</h4>
         Article Tags:<br>
-        <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', '), class: "btn btn-default" %>
+        <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </aside>
 </div>

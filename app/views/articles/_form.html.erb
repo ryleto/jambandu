@@ -3,7 +3,7 @@
     <%= form_for(@article) do |f| %>
     
       <%= f.label :pubdate %>
-      <%= f.date_field :pubdate, class: 'form-control', "data-provide" => 'datepicker' %>
+      <%= f.date_field :pubdate, class: 'form-control datepicker', "data-provide" => 'datepicker' %>
       
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
