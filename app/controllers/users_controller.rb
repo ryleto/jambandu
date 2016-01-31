@@ -22,7 +22,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     authorize @user
     if @user.save
-        send_welcome_message(self)
         redirect_to @user, notice: "User succesfully created!" 
     else
         redirect_to users_path, :alert => "Unable to add new user."
@@ -60,10 +59,6 @@ class UsersController < ApplicationController
     
     def user_params
       params.require(:user).permit(:role, :username, :name, :email, :password, :password_confirmation, :current_password, :company_id)
-    end
-    
-    def send_welcome_message(user)
-      UserTransactionMailer.welcome_message(user).deliver_now
     end
 
 end

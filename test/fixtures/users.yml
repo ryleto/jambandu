@@ -1,0 +1,6 @@
+meatsim:
+  id: 1
+  name:  Meat Sim
+  email: meatsim@jambandu.com
+  role: 2
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'secret1234') %>
