@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     authorize @user
     if @user.save
-        redirect_to @user, notice: "User succesfully created!" 
+        redirect_to @user, :notice => "User succesfully created!" 
     else
         redirect_to users_path, :alert => "Unable to add new user."
     end
