@@ -12,7 +12,6 @@
       <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>
       <% if current_user.try(:admin?) %>
       <li><%= link_to "Manage Users", users_path %></li>
-      <li><%= link_to "Manage Accounts", accounts_path %></li>
       <% end %>
       <li role="separator" class="divider"></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   post  'contact',  to: 'messages#create'
   get   'tags/:tag',to: 'articles#index', as: :tag
   
-  resources :accounts
   resources :companies
   #resources :comments, only: [:create, :destroy]
   #resources :comments, :path_prefix => '/:commentable_type/:commentable_id'
