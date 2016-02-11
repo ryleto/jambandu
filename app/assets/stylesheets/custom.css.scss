@@ -62,6 +62,10 @@ section {
   max-width: 620px;
   margin: 0 auto;
 }
+.authform.login {
+  padding: 30px 0;
+  max-width: 320px;
+}
 .authform form {
   @extend .well;
   @extend .well-lg;
