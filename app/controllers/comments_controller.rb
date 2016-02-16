@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   
   def create
     @comment = @commentable.comments.create(comment_params)
-    #@comment = @commentable.comments.new(comment_params) 
     if @comment.save
         redirect_to request.referer, :notice => "Comment submitted!"
     else
