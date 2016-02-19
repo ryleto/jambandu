@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
         redirect_to @user, :notice => "User succesfully created!" 
     else
-        redirect_to users_path, :alert => "Unable to add new user."
+        render 'new'
     end
   end
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       redirect_to users_path, :notice => "User updated."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      render 'edit'
     end
   end
 
