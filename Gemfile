@@ -22,12 +22,10 @@ gem 'active_link_to', '~> 1.0.3'
 group :development, :test do
   gem 'byebug'
 end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-group :development do
   gem 'better_errors'
   gem 'quiet_assets'
-  gem 'spring-commands-rspec'
 end
