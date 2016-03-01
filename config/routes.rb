@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users
   end
   
-  root to: 'visitors#index'
+  root to: 'static_pages#index'
   get   'about'     => 'static_pages#about'
   get   'products'  => 'static_pages#products'
   get   'dashboard' => 'static_pages#home'
