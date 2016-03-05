@@ -1,6 +1,5 @@
 <div class="container">
   <div class="row">
-
     <h1>Contact Us</h1>
     <%= form_for @message, url: contact_path do |message_form| %>
       <fieldset>
@@ -19,15 +18,12 @@
         <div class="field">
           <%= message_form.text_area :content,placeholder: "Your Message", size: "25x6", class: 'form-control' %>
         </div><br>
-      </fieldset>
-      
-      <fieldset>
+
         <div class="field">
           <%= message_form.submit "Send", class: "btn btn-primary" %>
         </div>
       </fieldset>
     <% end %>
     <br><br>
-    
   </div>
 </div>
