@@ -26,6 +26,5 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'better_errors'
   gem 'quiet_assets'
 end
