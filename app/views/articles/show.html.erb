@@ -9,30 +9,6 @@
         <%= @article.body.html_safe %>
       </p>
     </section>
-    <!-- PANEL SECTION -->
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <div class="panel-title"><small><b>News Article</b>&nbsp;&nbsp;|&nbsp;&nbsp;</b><i><%= Time.at(@article.pubdate).strftime("%b %d, %Y") %></i></small>
-              </div>
-              <div class="panel-controls">
-                  <ul>
-                      <li><a href="" data-toggle="close" class="portlet-close"><i class="portlet-icon portlet-icon-close"></i></a></li>
-                  </ul>
-              </div>
-          </div>
-          <div class="panel-body">
-              <div class="scrollable" ui-jq="scrollbar" ui-options="{ ignoreOverlay: false }">
-                  <div class="demo-portlet-scrollable-extended">
-                      <h3><%= @article.title %></h3>
-                      <hr>
-                        <section>
-                          <p><%= @article.body.html_safe %></p>
-                        </section>
-                  </div>
-              </div>
-          </div>
-      </div>
-    <!-- END PANEL SECTION -->                 
     <br>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
