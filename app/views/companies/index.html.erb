@@ -1,7 +1,19 @@
 <div class="container">
+  <% if current_user.try(:admin?) %>
+    <div id="newco" style="display:none;">
+      <%= form_for Company.new do |f| %>
+      <%= f.label :company_name %>
+        <%= f.text_field :company_name, class: 'form-control' %>
+        <br>
+        <%= f.submit "Save", class: "btn btn-primary" %>&nbsp;&nbsp;<%= link_to "Cancel", '#', class: 'btn btn-default newco_cancel' %>
+      <% end %>
+    </div>
+  <% end %>
   <div class="row">
-    <h3>Companies <small>(<%= Company.count %> registered)</small></h3>
-    <%= button_to "new company", new_company_path, class:"btn btn-primary", :method => :get %><br>
+    <h3>Companies <small>(<%= Company.count %> registered)</small></h3><br>
+    <%= link_to('#', class:"btn btn-primary newco_link") do %>
+      New Company
+    <% end %><br>
       <table class="table">
         <thead>
           <th>Company Name</th>

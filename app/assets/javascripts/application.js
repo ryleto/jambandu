@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
@@ -17,4 +18,13 @@ $(function() {
         };
     })(this));
     return setTimeout(flashCallback, 3000);
+});
+
+$(function(){
+    $(".newco_link").click(function(){
+        $("#newco").slideDown('fast');
+    });
+    $(".newco_cancel").click(function(){
+        $("#newco").slideUp('fast');
+    });
 });
