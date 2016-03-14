@@ -1,17 +1,18 @@
 <div class="container">
   <% if current_user.try(:admin?) %>
-    <div id="newco" style="display:none;">
+    <div id="new_company" style="display:none;">
       <%= form_for Company.new do |f| %>
-      <%= f.label :company_name %>
+        <br>
+        <%= f.label :company_name %>
         <%= f.text_field :company_name, class: 'form-control' %>
         <br>
-        <%= f.submit "Save", class: "btn btn-primary" %>&nbsp;&nbsp;<%= link_to "Cancel", '#', class: 'btn btn-default newco_cancel' %>
+        <%= f.submit "Save", class: "btn btn-primary" %>&nbsp;&nbsp;<%= link_to "Cancel", '#', class: 'btn btn-default new_company_cancel' %>
       <% end %>
     </div>
   <% end %>
   <div class="row">
     <h3>Companies <small>(<%= Company.count %> registered)</small></h3><br>
-    <%= link_to('#', class:"btn btn-primary newco_link") do %>
+    <%= link_to('#', class:"btn btn-primary new_company_link") do %>
       New Company
     <% end %><br>
       <table class="table">

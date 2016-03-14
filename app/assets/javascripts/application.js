@@ -21,10 +21,10 @@ $(function() {
 });
 
 $(function(){
-    $(".newco_link").click(function(){
-        $("#newco").slideDown('fast');
+    $(".new_company_link").click(function(){
+        $("#new_company").slideDown('fast');
     });
-    $(".newco_cancel").click(function(){
-        $("#newco").slideUp('fast');
+    $(".new_company_cancel").click(function(){
+        $("#new_company").slideUp('fast');
     });
 });
