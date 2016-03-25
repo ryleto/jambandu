@@ -10,7 +10,6 @@ class CompaniesController < ApplicationController
  
   def show
     @users = @company.users(params[:company_id])
-    @comment = Comment.new
     authorize @company
   end
  
