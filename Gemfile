@@ -15,9 +15,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma', '~> 2.15', '>= 2.15.3'
 gem 'devise'
 gem 'pundit'
-gem 'carrierwave'
-gem 'acts_as_commentable'
-gem 'acts-as-taggable-on', '~> 3.5'
 gem 'active_link_to', '~> 1.0.3'
 
 group :development, :test do
