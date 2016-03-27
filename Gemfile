@@ -22,7 +22,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.1', '>= 3.1.1'
   gem 'spring'
   gem 'quiet_assets'
 end

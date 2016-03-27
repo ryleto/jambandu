@@ -8,11 +8,7 @@
     <tr><td><b>Logins:</b></td><td><%= @user.sign_in_count %></td></tr>
     <tr><td><b>Last Activity:</b></td><td><small><i><%= @user.last_sign_in_at || "N/A" %></i></small></td>
     <br></tr>
-    </table><br>
-    
-    <!-- Comment Module -->
-    <%= render :partial => 'comments/comments', :locals => {:commentable_object => @user} %>
-    
+    </table>
     <br><br>   
     <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
     <% if current_user.email? %>
