@@ -1,9 +1,79 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Imports 
+2. Variables
+3. Layout
+4. UI Elements
+5. Header / Navbar
+6. Forms
+
+-------------------------------------------------------------------*/
+
+/* IMPORTS */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Montserrat);
 
+/* VARIABLES */
 $primary-blue: #0099ff;
 $primary-font-set: 'Montserrat', arial, sans-serif;
+
+/* LAYOUT */
+main {
+  @extend .container;
+  background-color: #eee;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px;
+  }
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+  }
+.column {
+  @extend .col-md-8;
+  @extend .text-center;
+  }
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
+
+/* UI ELEMENTS */
+.button-xs {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-xs;
+}
+a.btn-ghost {
+  border:2px solid #ffffff;
+  background:transparent;
+  padding:5px 15px;
+  margin-top:11px;
+  text-transform:uppercase;
+  color:#ffffff;
+  font: {
+    family: $primary-font-set;
+    size: 12px;
+    weight: 400;
+  }
+}
+a.btn-ghost:hover {
+  color: $primary-blue;
+  border:2px solid $primary-blue;
+  text-decoration:none;
+}
+
+a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
+  text-decoration:none;
+}
 
 /* HEADER & NAVBAR */
 #logo {
@@ -56,45 +126,8 @@ $primary-font-set: 'Montserrat', arial, sans-serif;
   border-color: transparent;
   color: #626262;
 }
-a.btn-ghost {
-  border:2px solid #ffffff;
-  background:transparent;
-  padding:5px 15px;
-  margin-top:11px;
-  text-transform:uppercase;
-  color:#ffffff;
-  font: {
-    family: $primary-font-set;
-    size: 12px;
-    weight: 400;
-  }
-}
-a.btn-ghost:hover {
-  color: $primary-blue;
-  border:2px solid $primary-blue;
-  text-decoration:none;
-}
 
-a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
-  text-decoration:none;
-}
-
-/* PAGE ELEMENTS */
-main {
-  @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px;
-  }
-img {
-  @extend .img-responsive;
-  margin: 0 auto;
-  }
-.column {
-  @extend .col-md-8;
-  @extend .text-center;
-  }
+/* FORMS */
 .form {
   @extend .col-md-8;
   }
@@ -102,22 +135,6 @@ img {
   @extend .col-md-8;
   @extend .text-center;
   }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
-  }
-section {
-  @extend .row;
-  margin-top: 20px;
-  }
-.button-xs {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-xs;
-}
-  
-/* FORMS */
 .authform {
   padding: 50px;
   max-width: 620px;
