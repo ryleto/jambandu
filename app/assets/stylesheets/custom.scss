@@ -1,11 +1,12 @@
 /*------------------------------------------------------------------
+
 [Table of contents]
 
 1. Imports 
 2. Variables
 3. Layout
-4. UI Elements
-5. Header / Navbar
+4. Header / Navbar
+5. UI Elements
 6. Forms
 
 -------------------------------------------------------------------*/
@@ -45,35 +46,6 @@ section {
   @extend .btn-primary;
   @extend .btn-lg;
   }
-
-/* UI ELEMENTS */
-.button-xs {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-xs;
-}
-a.btn-ghost {
-  border:2px solid #ffffff;
-  background:transparent;
-  padding:5px 15px;
-  margin-top:11px;
-  text-transform:uppercase;
-  color:#ffffff;
-  font: {
-    family: $primary-font-set;
-    size: 12px;
-    weight: 400;
-  }
-}
-a.btn-ghost:hover {
-  color: $primary-blue;
-  border:2px solid $primary-blue;
-  text-decoration:none;
-}
-
-a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
-  text-decoration:none;
-}
 
 /* HEADER & NAVBAR */
 #logo {
@@ -125,6 +97,35 @@ a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
   background: transparent;
   border-color: transparent;
   color: #626262;
+}
+
+/* UI ELEMENTS */
+.button-xs {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-xs;
+}
+a.btn-ghost {
+  border:2px solid #ffffff;
+  background:transparent;
+  padding:5px 15px;
+  margin-top:11px;
+  text-transform:uppercase;
+  color:#ffffff;
+  font: {
+    family: $primary-font-set;
+    size: 12px;
+    weight: 400;
+  }
+}
+a.btn-ghost:hover {
+  color: $primary-blue;
+  border:2px solid $primary-blue;
+  text-decoration:none;
+}
+
+a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
+  text-decoration:none;
 }
 
 /* FORMS */
