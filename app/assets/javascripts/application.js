@@ -19,12 +19,3 @@ $(function() {
     })(this));
     return setTimeout(flashCallback, 3000);
 });
-
-$(function(){
-    $(".new_company_link").click(function(){
-        $("#new_company").slideDown('fast');
-    });
-    $(".new_company_cancel").click(function(){
-        $("#new_company").slideUp('fast');
-    });
-});

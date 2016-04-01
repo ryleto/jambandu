@@ -12,7 +12,7 @@
   <% end %>
   <div class="row">
     <h3>Companies <small>(<%= Company.count %> registered)</small></h3><br>
-    <%= link_to('#', class:"btn btn-primary new_company_link") do %>
+    <%= link_to(new_company_path, class:"btn btn-primary") do %>
       New Company
     <% end %><br>
       <table class="table">
