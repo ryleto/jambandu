@@ -3,7 +3,6 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker
 //= require_tree .
 
 // FLASH MESSAGES: FADEOUT
