@@ -24,9 +24,9 @@ $primary-font-set: 'Montserrat', arial, sans-serif;
 main {
   @extend .container;
   background-color: #eee;
+  margin-top: 51px;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px;
   }
 img {
   @extend .img-responsive;
@@ -40,7 +40,6 @@ section {
   @extend .row;
   margin-top: 20px;
   }
-
 .submit {
   @extend .btn;
   @extend .btn-primary;
@@ -76,8 +75,8 @@ section {
 .navbar li.active a:hover,
 .navbar li.active a:focus {
   border-color: #e6e6e6;
-  color: #626262;
   background-color: #e6e6e6;
+  color: #626262;
 }
 .navbar li a {
   border-radius: 0;
@@ -108,22 +107,21 @@ section {
 a.btn-ghost {
   border:2px solid #ffffff;
   background:transparent;
-  padding:5px 15px;
-  margin-top:11px;
-  text-transform:uppercase;
   color:#ffffff;
   font: {
     family: $primary-font-set;
     size: 12px;
     weight: 400;
   }
+  margin-top:11px;
+  padding:5px 15px;
+  text-transform:uppercase;
 }
 a.btn-ghost:hover {
   color: $primary-blue;
   border:2px solid $primary-blue;
   text-decoration:none;
 }
-
 a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
   text-decoration:none;
 }
