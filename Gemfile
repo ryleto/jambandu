@@ -3,7 +3,6 @@ ruby '2.2.3'
 
 gem 'rails', '4.2.6'
 gem 'pg'
-
 gem 'active_link_to'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
@@ -21,9 +20,6 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
-end
-
-group :development do
   gem 'quiet_assets'
   gem 'spring'
   gem 'web-console'
