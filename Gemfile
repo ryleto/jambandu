@@ -21,5 +21,4 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'spring'
-  gem 'web-console'
 end
