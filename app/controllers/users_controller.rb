@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     authorize @user
     if @user.save
-        redirect_to @user, :notice => "User succesfully created!" 
+        redirect_to @user, notice: "User successfully created" 
     else
         render 'new'
     end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
        params[:user].delete(:password_confirmation)
     end
     if @user.update_attributes(user_params)
-      redirect_to users_path, :notice => "User updated."
+      redirect_to users_path, notice: "User updated"
     else
       render 'edit'
     end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def destroy
     authorize @user
     @user.destroy
-    redirect_to users_path, :notice => "User deleted."
+    redirect_to users_path, notice: "User deleted"
   end
 
   private
