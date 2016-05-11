@@ -26,8 +26,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     authorize @company
     if @company.save
-      flash[:notice] = 'Company was successfully created.'
-      redirect_to @company
+      redirect_to @company, notice: 'Company was successfully created'
     else
       render 'new'
     end
@@ -36,8 +35,7 @@ class CompaniesController < ApplicationController
   def update
     if @company.update_attributes(company_params)
       authorize @company
-      flash[:notice] = "Company was successfully updated."
-      redirect_to @company
+      redirect_to @company, notice: "Company updated"
     else
       render 'edit'
     end
@@ -46,8 +44,7 @@ class CompaniesController < ApplicationController
   def destroy
     authorize @company
     @company.destroy
-    flash[:notice] = "Company was successfully deleted"
-    redirect_to companies_path
+    redirect_to companies_path, notice: "Company deleted"
   end
  
   private
