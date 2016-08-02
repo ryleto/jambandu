@@ -173,7 +173,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pg
-  puma (~> 3.4)
+  puma
   pundit
   quiet_assets
   rails (= 4.2.6)
