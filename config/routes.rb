@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get   'about'     => 'static_pages#about'
   get   'products'  => 'static_pages#products'
   get   'dashboard' => 'static_pages#home'
-  get   'error_redirect'  => 'errors#redirect'
-  get   'contact',  to: 'messages#new', as: 'contact'
-  post  'contact',  to: 'messages#create'
-  get   'tags/:tag',to: 'articles#index', as: :tag
+  get   'error_redirect' => 'errors#redirect'
+  get   'contact'   => 'messages#new', as: 'contact'
+  post  'contact'   => 'messages#create'
+  get   'tags/:tag' => 'articles#index', as: :tag
   
   resources :companies
   #resources :comments, only: [:create, :destroy]
