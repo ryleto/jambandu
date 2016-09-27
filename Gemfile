@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0.1'
 gem 'pg'
 gem 'active_link_to'
 gem 'bootstrap-sass'
@@ -19,6 +19,6 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
-  gem 'quiet_assets'
+  #gem 'quiet_assets'
   gem 'spring'
 end
