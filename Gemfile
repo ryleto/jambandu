@@ -13,9 +13,9 @@ gem 'jquery-turbolinks'
 gem 'puma'
 gem 'pundit'
 gem 'sass-rails'
-gem 'will_paginate'
-gem 'uglifier'
 gem 'turbolinks'
+gem 'uglifier'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
