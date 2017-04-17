@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post  'contact', to: 'messages#create'
   get   'tags/:tag', to: 'articles#index', as: :tag
   
-  resources :companies
   resources :comments
+  resources :companies
   resources :articles
 end
