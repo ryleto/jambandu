@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
 
   #has_many :comments, dependent: :destroy
   belongs_to :company, touch: true
-  accepts_nested_attributes_for :company, :update_only => true
+  accepts_nested_attributes_for :company, update_only: :true
 
   enum role: [:admin, :editor, :subscriber, :user]
-  after_initialize :set_default_role, :if => :new_record?
+  after_initialize :set_default_role, if: :new_record?
   
   before_save   :downcase_email
   validates :name,  presence: true, length: { maximum: 50 }
