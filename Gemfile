@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.1.1'
+gem 'rails', '5.1.4'
 gem 'pg'
 gem 'active_link_to'
 gem 'bootstrap-sass'
